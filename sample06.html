@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라인컴퓨터아트학원</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Dongle&family=Hahmlet:wght@100..900&family=Hi+Melody&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        body {margin: 0;}
+        #layout01     { max-width: 900px; margin: auto;}
+         header       {background: rgb(226, 111, 120); padding: 20px ; text-align: center; transition: 0.5s}
+         header:hover {background: tomato;}
+         h1  {
+                font-family: "Black Han Sans", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+         nav ul       {display: flex; /* list-style-position: inside;*/ padding-left: 0; max-width: 700px; margin: auto; padding: 50px 0; /*list-style-type: circle;*/ list-style: none; flex-wrap:wrap; justify-content: center; } 
+         nav li       {/*flex: 1;*/text-align: center; transition: 0.5s; flex-basis: 135px;}
+         nav li:hover {transform: scale(1.5) translateY(-10px); }
+         nav a        {color: black; text-decoration: none;
+                font-family: "Hahmlet", serif;
+                font-optical-sizing: auto;
+                font-weight: 500; /* 100~900 */
+                font-style: normal;
+                    }
+         
+
+        #layout02     {display: flex;}
+        main          {flex:2.5;}
+        main section  {background: rgb(238, 161, 174); transition: 0.5s; padding: 20px;}
+        main section p {
+        font-family: "Dongle", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+        main section:hover {transform: rotate(10deg);}
+        main article  {background: rgb(243, 197, 241); padding: 20px;transition: 0.5s;} 
+        main article:hover {transform: rotate(-10deg)}
+        main article p  {
+        font-family: "Nanum Pen Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        }
+        aside         {background: rgb(245, 196, 204); flex:1; transition: 0.5s; padding: 20px;}
+        aside p  {
+        font-family: "Hi Melody", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        aside:hover   {background: linear-gradient(180deg, tomato, gold);}
+        footer        {background: linear-gradient(30deg, pink,palevioletred); flex:1; transition: 0.5S;padding: 20px;  text-align: center;
+        font-family: "Bagel Fat One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        footer:hover  {background:linear-gradient(30deg, yellow, orange) ;}
+        
+
+
+        /* 작은기계장치에 대한 설정 {최대넓이: 550픽셀} 0~550까지 적용됨 */
+        @media(max-width:550px){
+            #layout02 {flex-direction:column;}
+            /*nav ul {background: pink;}*/ 
+            nav li:nth-child(4),
+            nav li:nth-child(5)  {/*display:none;*/}
+        }
+    </style>
+</head>
+<body>
+    <div id="layout01">
+        <header><h1>마크업 첫걸음</h1></header>
+        <nav>
+         <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+         </ul>
+        </nav>
+        <div id="layout02">
+            <main>
+                 <section>
+                    <h2>정보구역-1</h2>
+                    <p>이 헌법공포 당시의 국회의원의 임기는 제1항에 의한 국회의 최초의 집회일 전일까지로 한다. 타인의 범죄행위로 인하여 생명·신체에 대한 피해를 받은 국민은 법률이 정하는 바에 의하여 국가로부터 구조를 받을 수 있다.</p>
+                <p>군인은 현역을 면한 후가 아니면 국무위원으로 임명될 수 없다. 모든 국민은 사생활의 비밀과 자유를 침해받지 아니한다. 여자의 근로는 특별한 보호를 받으며, 고용·임금 및 근로조건에 있어서 부당한 차별을 받지 아니한다.</p>
+                </section>
+                 <article>
+                    <h2>정보구역-2</h2>
+                    <p>대법원장의 임기는 6년으로 하며, 중임할 수 없다. 외국인은 국제법과 조약이 정하는 바에 의하여 그 지위가 보장된다. 대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 국가는 법률이 정하는 바에 의하여 재외국민을 보호할 의무를 진다. 모든 국민은 행위시의 법률에 의하여 범죄를 구성하지 아니하는 행위로 소추되지 아니하며, 동일한 범죄에 대하여 거듭 처벌받지 아니한다.</p>
+                </article>
+            </main>
+            <aside>
+                <h3>부가정보</h3>
+                <p>헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
+
+<p>대법원에 대법관을 둔다. 다만, 법률이 정하는 바에 의하여 대법관이 아닌 법관을 둘 수 있다. 형사피의자 또는 형사피고인으로서 구금되었던 자가 법률이 정하는 불기소처분을 받거나 무죄판결을 받은 때에는 법률이 정하는 바에 의하여 국가에 정당한 보상을 청구할 수 있다.</p>
+
+
+            </aside>
+        </div>
+        <footer>하단구역</footer>
+    </div>
+</body>
+</html> 

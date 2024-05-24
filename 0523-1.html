@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미션 복습하기</title>
+    <style>
+        #layout1   {max-width: 900px; margin:auto;}
+        header     {background: linear-gradient(orange, gold); padding: 20px; text-align: center;}
+        nav        {
+            height: 300px; 
+            background: radial-gradient( circle , green 3%,orange 60%,red 90%); 
+            margin: 20px auto; border-radius: 20px; 
+            transition: 0.5s;}
+        nav:hover {
+            background: radial-gradient(circle, pink 1%, palevioletred 60%, violet 90%); transform: rotate(30deg);}
+        header h1  {margin: 0;}
+        #layout2   {display: flex;}
+        #layout2 p {margin: 0;}
+        #layout2 p::first-letter {font-size: 2rem; border: 2px solid red; background: rgba(0,0,225,.5); border-radius:10px ; padding-right: 10px; padding-left: 10px;}
+        #layout2 p::first-letter:hover {background: red;}
+        #layout2 p:hover::first-letter {background: red;}
+        main       {background-color: rgb(166, 255, 78); padding: 20px; flex: 2;}
+        /*main p:hover {background: red;}*/
+        main h2    {margin: 0;}
+        aside      {background-color: thistle; padding: 20px; flex: 1;}
+        aside h3   {margin: 0;}
+        footer     {background-color: lemonchiffon; padding: 20px; text-align: center;}
+        footer h3  {margin: 0;}
+          
+        /* 반흥형부분(작은기계장치에 허용되는 최대넓이는 0~550픽셀크기)*/
+        @media(max-width:550px) {
+          #layout2 {flex-direction: column;}
+        }
+    </style>
+</head>
+<body>
+    <div id="layout1">
+        <header><h1>상단영역</h1></header>
+        <nav></nav>
+        <div id="layout2">
+            <main><h2>메인영역</h2>
+            <p>모든 국민은 근로의 의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다. 모든 국민은 인간다운 생활을 할 권리를 가진다.</p>
+            <p>대통령은 국민의 보통·평등·직접·비밀선거에 의하여 선출한다. 모든 국민은 학문과 예술의 자유를 가진다. 국가는 농지에 관하여 경자유전의 원칙이 달성될 수 있도록 노력하여야 하며, 농지의 소작제도는 금지된다.</p>
+            <p>이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 국회의원은 국가이익을 우선하여 양심에 따라 직무를 행한다.</p></main>
+            <aside><h3>부가영역</h3>
+                <p>모든 국민은 근로의 의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다. 모든 국민은 인간다운 생활을 할 권리를 가진다.</p>
+                <p>대통령은 국민의 보통·평등·직접·비밀선거에 의하여 선출한다. 모든 국민은 학문과 예술의 자유를 가진다. 국가는 농지에 관하여 경자유전의 원칙이 달성될 수 있도록 노력하여야 하며, 농지의 소작제도는 금지된다.</p>
+                <p>이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 국회의원은 국가이익을 우선하여 양심에 따라 직무를 행한다.</p>
+
+
+            </aside>
+        </div>
+        <footer><h3>하단정보</h3></footer>
+    </div>
+</body>
+</html>
