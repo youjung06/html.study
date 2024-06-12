@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공이 좌우 그리고 상하로 무한반복하는 스크립트</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        #layout {
+            max-width: 700px; margin: auto; border: 5px solid pink;
+            position: relative; height: 100vh;
+        }
+        #b1, #b2 {
+            width: 100px; height: 100px; border-radius: 50%; 
+            position: absolute; background: radial-gradient(lightcoral, lightpink, lightskyblue); 
+        }
+        #b1 { top: 100px; left: 0;}
+        #b2 { top: 0; left: calc((100% - 100px) / 2);}
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <h1>공이 좌우 그리고 상하로 무한반복한다.</h1>
+        <div id="b1"></div>
+        <div id="b2"></div>
+    </div>
+    
+    <script>
+        const $layout = document.querySelector("#layout") //공들이 들어있는 핑크색 컨테이너
+        const $b1 = document.querySelector("#b1"); //완쪽이동 공 객체
+        const $b2 = document.querySelector("#b2"); //아래쪽 이동 공 객체
+
+        let i = 0; //왼쪽 공 위치(X좌표)
+        let j = 0;
+
+        let sp = 10; //속도 (숫자가 증가시 속도가 빨라짐)
+        let sp1 = 10;
+        let ww = $layout.clientWidth; //핑크색 컨테이너 ("#layout") 넓이
+        let wh = $layout.clientHeight;
+        let b1w = $b1.offsetWidth; //왼쪽 이동 공의 넓이(+패딩+보더)
+        let b2h = $b2.offsetHeight;//아래쪽 이동 공의 높이 
+        
+
+        setInterval( ()=> move() , 10 ); //10은 0.01초, 0.01초 마다 move() 함수 호출
+
+        move = () =>{
+            //오른쪽 방향으로 이동
+            i += sp; // i = i + sp;.... 0 = 0+10 ..0에서 10을 더한 후 0은 10이 된다. 10은 i이다.
+            j += sp1;
+
+            //반대 방향으로 리턴
+            //if (오른쪽 끝이거나 왼쪽 끝이라면) 반대방향이 되라
+            if( i+b1w >= ww || i <= 0 ) sp *= -1; //sp = sp * (-1) sp= 10 * (-1) sp= -10;
+            if( j+b2h >= wh || j <= 0 ) sp1 *= -1;
+            
+            $b1.style.left = `${i}px`; //백틱문자
+
+            $b2.style.top = `${j}px`; 
+        }
+    </script>
+</body>
+</html>
