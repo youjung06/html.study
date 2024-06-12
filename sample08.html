@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>망고 혀 on/off 스크립트</title>
+    <style>
+        h1 {
+            max-width: 400px; 
+            margin: auto; 
+            background-color: lightgoldenrodyellow; 
+            text-align: center; 
+            border: 5px solid lightcoral;
+        }
+        #dog {
+            max-width: 400px; 
+            margin: auto; 
+            border: 5px solid lightsalmon; 
+            text-align: center;
+            position: relative;
+        }
+        h2 {
+            text-align: center;
+        }
+        img {
+            width: 100%;
+        }
+        #popup {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: lightcoral;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <h1>진아에게</h1>
+    <section id="dog">
+        <h2>무엇을 할건가요</h2>
+        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAxODA2MDdfMTUw%2FMDAxNTI4MzQxNzYzNDQy.5fftKt01OVw9bOKell9WnL2cjVUczbgYtFFwUBVEXKMg.AcoqlyDYEcLCHvKHf-NvRKJ6ht1AXP-reKbgatRkavwg.JPEG.h88d4da%2F4-2.jpg&type=sc960_832" alt="진아" id="zz">
+        <button type="button" onclick="dog0()">칭찬하기</button>
+        <button type="button" onclick="dog1()">욕 하기</button>    
+        <div id="popup">진아가 삐졌어요!</div>
+    </section>
+    <script> 
+        const $img = document.getElementById('zz');
+        const $popup = document.getElementById('popup');
+
+        function dog0() {
+            $img.setAttribute('src', 'images/zina.jpeg');
+            showComplimentPopup();
+        }
+
+        function dog1() {
+            $img.setAttribute('src', 'images/seok.jpeg');
+            showInsultPopup();
+        }
+
+        function showComplimentPopup() {
+            $popup.textContent = '진아가 반했어요!';
+            $popup.style.display = 'block';
+            setTimeout(() => {
+                $popup.style.display = 'none';
+            }, 2000); // 2 seconds
+        }
+
+        function showInsultPopup() {
+            $popup.textContent = '진아가 삐졌어요!';
+            $popup.style.display = 'block';
+            setTimeout(() => {
+                $popup.style.display = 'none';
+            }, 2000); // 2 seconds
+        }
+    </script>
+</body>
+</html>
